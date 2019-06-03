@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::post('agenda/cliente', function(){
+    return "Form funcionando";
+}); 
