@@ -10,10 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
-    return view('index');
+    return view('layouts.main');
 });
+
+Route::view('/', 'agenda.create');
+
+Route::get('/agenda', 'AgendaController@index');
 
 Route::post('agenda/cliente', function(){
     return "Form funcionando";

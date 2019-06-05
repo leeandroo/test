@@ -19,7 +19,7 @@ html,
 body,
 header,
 #fondo  {
-height: 950px;
+height: 1100px;
 }
 }
 @media (min-width: 800px) and (max-width: 850px) {
@@ -36,7 +36,7 @@ background-color: rgb(27, 27, 27) !important;
 }
 
 .navbar:not(.top-nav-collapse) {
-background: transparent !important;
+	background: transparent !important;
 }
 
 @media (max-width: 991px) {
@@ -48,7 +48,7 @@ background: rgb(27, 27, 27) !important;
 
 #btnformulario .btn {
 	color: white;
-	background-color: #FE4568;
+	background-color: #00bcd4 ;
 	border-radius: 1.25rem;
 	padding: 0.25rem 0.25rem;
 	font-size: 0.875rem;
@@ -67,21 +67,24 @@ background: rgb(27, 27, 27) !important;
 }
 
 .form-inline .btn {
-	border-radius: 0.25rem;
 	border-style: solid;
 	border-width: thin;
 	padding: 0.25rem 0.25rem;
 	text-transform: capitalize;
-	width:100px;
-	font-size: 13px;
-	font-family: "Hind Vadodara", sans-serif;
+	font-family: "Arial", sans-serif;
 }#btn-sign-up{
 	background-color: transparent;
 	color: white;
+	font-size: 18px;
+	width: 150px;
+	margin-left: 0%;
+	border-radius: 100px;
 }#btn-sign-in{
 	background-color: #4472C4;
 	color: white;
 	border-color: #4472C4;
+	width: 120px;
+	border-radius: 100px;
 }
 
 #btnForm .btn {
@@ -107,6 +110,28 @@ html {
 	scroll-behavior: smooth;
 }
 
+#equipo .card-title {
+	font-family: "Baloo Thambi";
+	font-size: 16px;
+	color: black;
+}
+
+.form-title {
+	font-family: "Baloo Thambi";
+	font-size: 18px;
+	color: black;
+}
+
+.col-md-6 h2 {
+	color: white;
+	font-family: "Hind Vadodara";
+	font-weight: bold;
+}
+
+.col-md-6 #raya {
+	border-color: white;
+	border-width: thin;
+}
 
 .card-body h5{
 	color: #4472C4;
@@ -114,3 +139,43 @@ html {
 	font-size: 18px;
 }
 
+#fondo .container-fluid .mask {
+	height: 750px;
+	position: absolute;
+}
+
+.title {
+	font-family: "Baloo Thambi";
+	font-weight: bold;
+	font-size: 34px;
+}
+
+
+.sub-title {
+	font-family: "Open Sans";
+	font-size: 18px;
+	color: black;
+}
+
+.ra{
+	border-width: 0.30rem;
+	width: 80px;
+	color: #424242;	
+}
+
+#servicios img {
+	height: 350px;
+	width: 525px;
+}
+
+
+li {
+	list-style-type: none;
+}
+
+
+#agenda .card {
+	border-color: lightgrey;
+	border-style: solid;
+	border-width: thin;
+}
