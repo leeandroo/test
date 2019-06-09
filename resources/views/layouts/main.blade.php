@@ -18,7 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('css/estilos.css')}}">
 </head>
 <body>
-
+	
 	<!-- HEADER START -->
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-dark scrolling-navbar fixed-top">
@@ -334,14 +334,7 @@
 				<!-- grid row -->
 					<div class="container">
 						<div class="row pt-lg-5 mt-lg-5 align-items-center">
-							<div class="col-lg-6 col-md-12">
-								<div class="card z-depth-5">
-									<div class="card-body">
-										@yield('agenda-form')
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-12 d-inline-block">
+							<div class="col-lg-4 col-md-12 d-inline-block">
 								<h2 class="title ">Agenda tu servicio</h2>
 								<div>
 									<hr class="ra d-inline-block">
@@ -353,10 +346,15 @@
 								<p class="grey-text text-left">
 									Te aseguramos lo siguiente: 
 								</p>
-								<ul class="grey-text text-left">
-									<li><i class="fas fa-check cyan-text"></i> Te notificaremos la confirmación de la cita</li>
-									<li><i class="fas fa-check cyan-text"></i> Se enviará la hora, el responsable y los costos de la cita</li>
-								</ul>
+								<li class="grey-text text-left"><i class="fas fa-check cyan-text"></i> Te notificaremos la confirmación de la cita</li>
+								<li class="grey-text text-left"><i class="fas fa-check cyan-text"></i> Se enviará la hora, el responsable y los costos de la cita</li>
+							</div>
+							<div class="col-lg-8 col-md-12">
+								<div class="card z-depth-5 my-5">
+									<div class="card-body">
+										@yield('agenda-form')
+									</div>
+								</div>
 							</div>
 						</div>
 						

@@ -14,6 +14,10 @@ Route::get('/', function () {
     return view('layouts.main');
 });
 
+Route::get('/dash', function () {
+    return view('layouts.dash');
+});
+
 Route::view('/', 'agenda.create');
 
 Route::get('/agenda', 'AgendaController@index');
