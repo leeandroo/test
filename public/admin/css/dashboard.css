@@ -5,20 +5,74 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200');
 @import url('https://fonts.googleapis.com/css?family=Sue+Ellen+Francisco');
 
-.table img {
-	height: 50px;
-	width: 50px;
+.nav {
+	height: auto;
 }
-
-.table th,td {
-	text-align: center;
-}
-
+.content-wrapper{
+	height: 100%;
+} 
 .side-title {
 	font-family: "Baloo Thambi";
 	font-weight: bold;
 	font-size: 18px;
 	margin-top: 25px;
+}
+
+.content-title {
+	font-family: "Baloo Thambi";
+	font-weight: bold;
+	font-size: 34px;
+}
+
+.page-item {
+	font-family: "Open Sans";
+}
+
+
+.col {
+	margin-bottom: 50px;
+}
+
+.sub-title {
+	font-family: "Baloo Thambi";
+	font-size: 18px;
+}
+
+.table-title {
+	font-family: "Baloo Thambi";
+	font-size: 16px;
+	margin-left: 0%;
+}
+
+.table-text {
+	font-family: "Hind Vadodara";
+	font-size: 16px;
+	color: grey;
+}
+
+#btn-aceptar {
+	font-family: "Arial";
+	font-size: 14px;
+	text-transform: capitalize;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 0.30rem;
+}
+#btn-cancelar {
+	font-family: "Arial";
+	font-size: 14px;
+	text-transform: capitalize;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 0.30rem;
+}
+
+.new-section {
+	margin-bottom: 30px;
 }
 
 .side-subtitle {
@@ -28,13 +82,17 @@
 }
 
 .side-link {
-	font-family: "Open Sans";
+	font-family: "Arial";
 	color: grey;
-	font-size: 18px;
+	font-size: 13px;
 }
 
-.treeview-menu {
-	font-size: 25px;
+.side-link .icon {
+	font-size: 12px;
+}
+
+.treeview-menu li {
+	margin-left: 0%;
 }
 
 .treeview-menu li a:hover {

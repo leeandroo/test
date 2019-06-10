@@ -18,10 +18,13 @@ Route::get('/dash', function () {
     return view('layouts.dash');
 });
 
-Route::view('/', 'agenda.create');
-
-Route::get('/agenda', 'AgendaController@index');
-
-Route::post('agenda/cliente', function(){
-    return "Form funcionando";
-}); 
+/*
+    RUTAS PARA EL CRUD AGENDA
+    @get -> para obtener/solcitar la URL
+    @post -> para enviar datos con un formulario
+    
+    Cada ruta aputa a un metodo distinto de AgendaController
+*/
+Route::get('/', 'AgendaController@create');
+Route::post('/', 'AgendaController@store');
+Route::get('/dash/agenda', 'AgendaController@index');
