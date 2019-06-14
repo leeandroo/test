@@ -121,7 +121,7 @@
 											</div>
 
 											<div class="form-row">
-												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+												<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12" >
 													<label for="servicio" class="mt-1 box-label">Tipo de servicio</label>
 													<select class="custom-select" name="servicio">
 														<option value="Mantención de equipos">Mantención de equipos</option>
@@ -136,12 +136,8 @@
 												</div>
 												<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 													<label for="fecha" class="mt-1 box-label">Fecha atención</label>
-													<input name="fecha" class="form-control " type="date">
-												</div>
-												<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-													<label for="hora" class="mt-1 box-label">Hora atención</label>
-													<input name="hora" class="form-control " type="time">
-												</div>				
+													<input name="fecha" class="form-control " type="text" id="datepicker">
+												</div>			
 											</div>
 										</div>
 

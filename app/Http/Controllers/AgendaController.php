@@ -41,7 +41,7 @@ class AgendaController extends Controller
             'telefono' => 'required|max:12',
             'correo' => 'required|max:50',
             'direccion' => 'required|max:50',
-            'hora' => 'required',
+            'fecha' =>'required'
         ]);
 
         if ($validator->fails()) {
@@ -60,7 +60,6 @@ class AgendaController extends Controller
                 'idcliente' => $data["rut"],
                 'servicio'=> $data["servicio"],
                 'fecha' => $data["fecha"],
-                'hora_atencion' => $data["hora"],
     	        'estado_whatsapp'=> $estadowsp,
     	        'estado_cita'=> "Nueva"
             ]);
@@ -84,7 +83,6 @@ class AgendaController extends Controller
                 'idcliente' => $data["rut"],
                 'servicio'=> $data["servicio"],
                 'fecha' => $data["fecha"],
-                'hora_atencion' => $data["hora"],
     	        'estado_whatsapp'=> $estadowsp,
     	        'estado_cita'=> "Nueva"
             ]);
