@@ -16,3 +16,6 @@ Route::get('/agendar', 'AgendaController@create');
 Route::get('/dashboard/agenda', 'AgendaController@index');
 Route::post('/agendar', 'AgendaController@store');
 
+// RUTAS INSUMO 
+Route::get('/insumo', 'InsumoController@create');
+
