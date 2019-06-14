@@ -1,6 +1,16 @@
-@extends('layouts.main')
-@section('agenda-form')
+@extends('layouts.content')
+@section('formulario')
 	<!-- FORM START -->
+	<div class="row mb-2 mt-2 text-center">
+		<div class="col-lg-12">
+			<h3 id="relawayEXB" class="font-weight-bold">
+				<strong>¿Nuevo por aquí?</strong>
+			</h3>
+			<p>
+				Agenda tu cita ingresando tus datos y el servicio que deseas solcitar
+			</p>
+		</div>
+	</div>
 	<form class="align-items-center" style="color: #757575;" action="{{ url('/') }}" method="POST">
 		{!! csrf_field() !!}
         <div class="form-group">
@@ -62,11 +72,11 @@
 			</div>
 
 			<div class="form-row">
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
 					<label for="servicio" class="mt-1 box-label">Tipo de servicio</label>
 					<select class="custom-select" name="servicio">
 						<option value="Mantención de equipos">Mantención de equipos</option>
-						<option value="Mantención veículos">Mantención vehículos</option>
+						<option value="Mantención de vehículos">Mantención de vehículos</option>
 						<option value="Equipamiento minero">Equipamiento minero</option>
 						<option value="Instalación de alarmas">Instalación de alarmas</option>
 						<option value="Instalación de cámaras">Instalación de cámaras</option>
@@ -78,6 +88,10 @@
 				<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 					<label for="fecha" class="mt-1 box-label">Fecha atención</label>
 					<input name="fecha" class="form-control " type="date">
+				</div>
+				<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+					<label for="hora" class="mt-1 box-label">Hora atención</label>
+					<input name="hora" class="form-control " type="time">
 				</div>				
 			</div>
 		</div>
@@ -92,4 +106,23 @@
 		</div>
 	</form>
     <!-- FORM END -->
-@endsection 
+@endsection
+@section('opciones')
+	<div class="mask flex-center rgba-black-strong" id="cover">
+		<div class="container-fluid text-left ml-4 mr-4">
+			<div class="row mb-3 mt-5">
+				<h3 id="relawayEXB" class="font-weight-bold">
+					<strong>BIENVENIDO OTRA VEZ</strong>
+				</h3>
+			</div>
+			<div class="row mb-3">
+				<p>
+					Si ya has realizado una solicitud con anterioridad no debes ingresar nuevamente tus datos. Selecciona el boton para agilizar el proceso
+				</p>
+			</div>
+			<div class="row mb-5">
+				<button type="button" class="btn" id="btn-agendar">Agendar cita</button>
+			</div>
+		</div>
+	</div>
+@endsection

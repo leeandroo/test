@@ -13,30 +13,31 @@
                                 <th class="table-title">Solicitante</th>
                                 <th class="table-title">Servicio</th>
                                 <th class="table-title">Fecha</th>
+                                <th class="table-title">Hora</th>
                                 <th class="table-title">Opciones</th>
                             </tr>
                         </thead>
                         <tbody >
                             @foreach ($citas as $cita)
                                 <tr>
-                                    <td class="table-text">
+                                    <td class="table-text align-baseline">
                                         {{ $cita->cliente->nombre }} 
                                         @if($cita->cliente->apellido != 'No aplica')
                                             {{$cita->cliente->apellido}}
                                         @endif
                                     </td>
-                                    <td class="table-text">{{ $cita->servicio }}</td>
-                                    <td class="table-text">{{ $cita->fecha }}</td>
-                                    <td class="">
+                                    <td class="table-text align-baseline">{{ $cita->servicio }}</td>
+                                    <td class="table-text align-baseline">{{ $cita->fecha }}</td>
+                                    <td class="table-text align-baseline">{{ $cita->hora_atencion }}</td>
+                                    <td class="align-baseline">
                                         <button class="btn cyan white-text" id="btn-aceptar">Confirmar</button>
-                                        <button class="btn danger-color white-text" id="btn-cancelar">Cancelar</button>
                                     </td>
                                 </tr>
                             @endforeach
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="4">{{ $citas->links('vendor.pagination.bootstrap-4') }}</td>
+                                <td colspan="5">{{ $citas->links('vendor.pagination.bootstrap-4') }}</td>
                             </tr>
                         </tfoot>    
                     </table>              
@@ -98,6 +99,26 @@
             <div class="card-body">
                 <div class="container-fluid">
                     <h1 class="sub-title">Próxima cita</h1>
+                    <div class="row">
+                        <div class="col-md-4 ">
+                            <div class="container text-center">
+                                <i class=" fas fa-calendar-alt grey-text icon-xl mb-3 mt-3"></i>
+                                <p>
+                                    {{ $proxima_cita->fecha }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h1 class="sub-title">Servicio</h1>
+                            <p>{{ $proxima_cita->servicio }}</p>
+                            <h1 class="sub-title">Hora</h1>
+                            <p>{{ $proxima_cita->hora_atencion }} hrs.</p>
+                            <h1 class="sub-title">Lugar</h1>
+                            <p>
+                                {{ $proxima_cita->cliente->direccion}}
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -18,6 +18,11 @@ Route::get('/dash', function () {
     return view('layouts.dash');
 });
 
+
+Route::get('/form', function () {
+    return view('layouts.content');
+});
+
 /*
     RUTAS PARA EL CRUD AGENDA
     @get -> para obtener/solcitar la URL
@@ -25,6 +30,6 @@ Route::get('/dash', function () {
     
     Cada ruta aputa a un metodo distinto de AgendaController
 */
-Route::get('/', 'AgendaController@create');
+Route::get('/form', 'AgendaController@create');
 Route::post('/', 'AgendaController@store');
 Route::get('/dash/agenda', 'AgendaController@index');

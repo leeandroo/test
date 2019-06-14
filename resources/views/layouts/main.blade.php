@@ -21,6 +21,24 @@
 	
 	<!-- HEADER START -->
 	<header>
+		@if ($errors->any())
+			<div id="myModal" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Hay errores en el formulario</h4>
+					</div>
+					<div class="modal-body">
+						<p>Some text in the modal.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+					</div>
+				</div>
+			</div>
+		@endif
 		<nav class="navbar navbar-expand-lg navbar-dark scrolling-navbar fixed-top">
 			<div class="container">
 				<!-- Navbar brand -->
@@ -519,5 +537,10 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClfElSCm1oarkG1XhX1Ac8vJ9tIFaYeVs"></script>
 	<!-- google maps -->
 	<script type="text/javascript" src="{{asset('js/scripts.js')}}" ></script>
+	<script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+	<script>
+		$('#myModal').modal('show')
+	</script>
 </body>
 </html>

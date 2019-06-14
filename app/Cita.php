@@ -15,7 +15,8 @@ class Cita extends Model
     protected $fillable =[
     	'idcliente',
         'servicio',
-    	'fecha',
+        'fecha',
+        'hora_atencion',
     	'estado_whatsapp',
     	'estado_cita'
     ];
