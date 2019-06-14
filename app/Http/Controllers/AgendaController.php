@@ -18,7 +18,7 @@ class AgendaController extends Controller
         foreach ($citas as $cita) {
             $cita->cliente = DB::table('cliente')->where('idcliente', $cita->idcliente)->first();
         }
-        return view('agenda.index', compact('citas', 'proxima_cita'));
+        return view('pages.agenda.index', compact('citas', 'proxima_cita'));
     }
 
     public function show()
@@ -28,7 +28,7 @@ class AgendaController extends Controller
 
     public function create()
     {
-        return view("agenda.create");
+        return view("pages.agenda.create");
     }
 
     public function store(){
@@ -46,7 +46,7 @@ class AgendaController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('/#agenda')
+            return redirect('/agendar')
                         ->withErrors($validator)
                         ->withInput();
         }
