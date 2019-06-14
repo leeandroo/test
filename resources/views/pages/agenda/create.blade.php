@@ -6,10 +6,15 @@
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h4 class="modal-title">Hay errores en el formulario</h4>
+						<h4 class="modal-title">Ups! algo ha salido mal</h4>
 					</div>
 					<div class="modal-body">
-						<p>Some text in the modal.</p>
+						<p>El formulario posee los siguientes errores:</p>
+						<ul>
+							@foreach($errors->all() as $error)
+								<li>{{$error}}</li>
+							@endforeach
+						</ul>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

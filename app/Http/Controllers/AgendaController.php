@@ -34,15 +34,14 @@ class AgendaController extends Controller
     public function store(){
         $estadowsp = 0;
         $data = request()->all();
-        $validator = Validator::make(request()->all(), [
-            'idcliente' => 'required|max:10',
+        $validator = Validator::make($data, [
+            'rut' => 'required|max:10',
             'nombre' => 'required',
             'apellido' => 'nullable',
             'telefono' => 'required|max:12',
             'correo' => 'required|max:50',
             'direccion' => 'required|max:50',
-            'fecha' => 'required',
-            'hora_atencion' => 'required'
+            'hora' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -51,11 +50,6 @@ class AgendaController extends Controller
                         ->withInput();
         }
         
-        registrarCita($data);
-    }
-
-    public function registrarCita($data) 
-    {
         $cliente = DB::table('cliente')->where('idcliente', $data["rut"])->first();
         if($cliente){
             if($data["estadowsp"]){
