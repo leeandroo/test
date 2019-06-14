@@ -13,7 +13,6 @@
                                 <th class="table-title">Solicitante</th>
                                 <th class="table-title">Servicio</th>
                                 <th class="table-title">Fecha</th>
-                                <th class="table-title">Hora</th>
                                 <th class="table-title">Opciones</th>
                             </tr>
                         </thead>
@@ -28,7 +27,6 @@
                                     </td>
                                     <td class="table-text align-baseline">{{ $cita->servicio }}</td>
                                     <td class="table-text align-baseline">{{ $cita->fecha }}</td>
-                                    <td class="table-text align-baseline">{{ $cita->hora_atencion }}</td>
                                     <td class="align-baseline">
                                         <button class="btn cyan white-text" id="btn-aceptar">Confirmar</button>
                                     </td>
@@ -110,9 +108,7 @@
                         </div>
                         <div class="col-md-8">
                             <h1 class="sub-title">Servicio</h1>
-                            <p>{{ $proxima_cita->servicio }}</p>
-                            <h1 class="sub-title">Hora</h1>
-                            <p>{{ $proxima_cita->hora_atencion }} hrs.</p>
+                            <p>{{ $proxima_cita->servicio }}</p>    
                             <h1 class="sub-title">Lugar</h1>
                             <p>
                                 {{ $proxima_cita->cliente->direccion}}

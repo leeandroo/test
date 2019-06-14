@@ -41,7 +41,7 @@ class AgendaController extends Controller
             'telefono' => 'required|max:12',
             'correo' => 'required|max:50',
             'direccion' => 'required|max:50',
-            'fecha' =>'required'
+            'fecha' =>'required|date_format:dd/mm/yyyy'
         ]);
 
         if ($validator->fails()) {
