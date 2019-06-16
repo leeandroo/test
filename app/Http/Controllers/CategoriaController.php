@@ -31,7 +31,7 @@ class CategoriaController extends Controller
         $data = request()->all();
         $validator = Validator::make($data, [
             'nombre' => 'required|max:20',
-            'descripcionn' => 'nullable|max:140'
+            'descripcion' => 'nullable|max:140'
         ]);
 
         if ($validator->fails()) {

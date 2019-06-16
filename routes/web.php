@@ -25,4 +25,8 @@ Route::get('/dashboard/categoria', 'CategoriaController@index');
 Route::get('/pages/categoria', 'CategoriaController@index');
 Route::post('/categoria/insertar', 'CategoriaController@store');
 
+// RUTAS EMPLEADO
+Route::get('/dashboard/empleado', 'EmpleadoController@index');
+Route::get('/pages/empleado', 'EmpleadoController@index');
+Route::post('/empleado/insertar', 'EmpleadoController@store');
 

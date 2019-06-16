@@ -83,7 +83,7 @@
                 <i class="fas fa-angle-down pull-right grey-text"></i> 
               </a>
               <ul class="treeview-menu grey lighten-5">
-                <li><a href="" class="side-link"><i class="fas fa-plus-circle"></i> Nuevas solicitudes</a></li>
+                <li><a href="{{ url('/dashboard/empleado' )}}" class="side-link"><i class="fas fa-plus-circle"></i>Empleados</a></li>
                 <li><a href="" class="side-link"><i class="fas fa-calendar-day"></i> Servicios agendados</a></li>
                 <li><a href="" class="side-link"><i class="fa fa-circle-o"></i> Gestión de OT</a></li>
                 <li><a href="" class="side-link"><i class="fa fa-circle-o"></i> Reagendar citas</a></li>
