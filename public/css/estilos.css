@@ -128,6 +128,11 @@ background: rgb(27, 27, 27) !important;
 	background: black!important;
 }
 
+#centrar{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
 #fondo{
 	background: url('../img/fondo-b.jpg');

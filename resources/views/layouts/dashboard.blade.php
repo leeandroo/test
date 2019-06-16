@@ -57,10 +57,10 @@
                 <i class="fas fa-angle-down pull-right grey-text"></i> 
               </a>
               <ul class="treeview-menu grey lighten-5">
-                <li><a href="{{ url('/dash/agenda') }}" class="side-link"><i class="far fa-calendar icon"></i> Gestión de agenda</a></li>
-                <li><a href="" class="side-link"><i class="fas fa-tasks icon"></i> Gestión de OT</a></li>
-                <li><a href="" class="side-link"><i class="fas fa-history icon"></i> Historial de atención</a></li>
-                <li><a href="" class="side-link"><i class="fas fa-user"></i> Gestión de clientes</a></li>
+                <li><a href="{{ url('/dashboard/agenda') }}" class="side-link"><i class="far fa-calendar icon"></i> Gestión de agenda</a></li>
+                <li><a href="{{ url('#') }}" class="side-link"><i class="fas fa-tasks icon"></i> Gestión de OT</a></li>
+                <li><a href="{{ url('#') }}" class="side-link"><i class="fas fa-history icon"></i> Historial de atención</a></li>
+                <li><a href="{{ url('#') }}" class="side-link"><i class="fas fa-user"></i> Gestión de clientes</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -110,6 +110,7 @@
       </div>  
       </div>
       <!--Fin-Contenido-->
+
     </div>
     <!-- jQuery 2.1.4 -->
     <script src="{{asset('admin/js/jQuery-2.1.4.min.js')}}"></script>

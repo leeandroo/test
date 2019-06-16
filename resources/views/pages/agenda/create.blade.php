@@ -1,6 +1,8 @@
 @extends('layouts.main')
 @section('titulo', 'Agendar Servicio')
 @section('contenido')
+
+
 	@if ($errors->any())
 		<div id="myModal" class="modal fade right" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   		aria-hidden="true">
@@ -24,6 +26,8 @@
 			</div>
 		</div>
 	@endif
+
+
 	<div id="form-container">
         <div class="container">
             <div class="row ml-0 mr-0 mb-5">
@@ -68,6 +72,8 @@
 								</div>
                             </div>
                         </div>
+
+						
                         <div class="col-lg-7">
                             <div class="card-body">
 								<div class="row mb-2 mt-2">

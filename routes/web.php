@@ -17,5 +17,11 @@ Route::get('/dashboard/agenda', 'AgendaController@index');
 Route::post('/agendar', 'AgendaController@store');
 
 // RUTAS INSUMO 
-Route::get('/insumo', 'InsumoController@create');
+Route::get('/dashboard/insumo', 'InsumoController@index');
+
+// RUTAS CATEGORIA 
+Route::get('/dashboard/categoria', 'CategoriaController@index');
+Route::get('/pages/categoria', 'CategoriaController@index');
+Route::post('/categoria/insertar', 'CategoriaController@store');
+
 

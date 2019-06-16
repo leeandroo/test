@@ -43,6 +43,7 @@
             </div>
         </div>
     </div>
+
     <div class="col-lg-4">
         <div class="card mt-4 ml-2 mr-2">
             <div class="card-body">
@@ -91,6 +92,7 @@
         </div>
     </div>
 </div>
+
 <div class="row mb-5">
     <div class="col-lg-4 col-md-8 col-sm-12 col-xs-12">
         <div class="card mt-4 ml-2 mr-2">
