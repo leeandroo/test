@@ -9,6 +9,23 @@
     @include('pages.categoria.buscar')
 
     </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+
+        @if ($errors->any())
+            <div class="alert alert-danger">  
+                <h5>UPS!</h5>          
+                <ul>
+                    @foreach ($errors->all() as $error)                
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>                  
+            </div>
+            
+        @endif
+
+    </div>
+
 </div>
 
 <div class="row">
