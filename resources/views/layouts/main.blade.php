@@ -17,7 +17,8 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('css/estilos.css')}}">
 </head>
 <body>
-    
+    @include('components.alerts')
+	
     @yield('contenido')
 	
     <!-- JQuery -->
@@ -40,7 +41,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 	<script>
 
-		$('#myModal').modal('show')
+		$('#message').modal('show')
 		$.datepicker.regional['es'] = {
 			closeText: 'Cerrar',
 			prevText: '< Ant',

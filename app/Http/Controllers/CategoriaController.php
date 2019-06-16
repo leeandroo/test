@@ -14,7 +14,7 @@ class CategoriaController extends Controller
         if($request){
 
             $query=trim($request->get('searchText'));
-            $categorias = DB::table('categoria')->where('nombre','LIKE','%'.$query.'%')->orderBy('idcategoria', 'DESC')->paginate(2);
+            $categorias = DB::table('categoria')->where('nombre','LIKE','%'.$query.'%')->orderBy('idcategoria', 'DESC')->paginate(4);
             
             return view('pages.categoria.index', ["categorias"=>$categorias, "searchtext"=>$query]);
         }
@@ -29,13 +29,23 @@ class CategoriaController extends Controller
     public function store ()
     {
         $data = request()->all();
-
-        Categoria::create([
-            'nombre' => $data['nombre'],
-            'descripcion' => $data['descripcion'],
+        $validator = Validator::make($data, [
+            'nombre' => 'required|max:20',
+            'descripcionn' => 'nullable|max:140'
         ]);
 
-        return redirect ('/dashboard/categoria');
+        if ($validator->fails()) {
+            return redirect('/dashboard/categoria')
+                        ->withErrors($validator)
+                        ->withInput();
+        }else
+        {
+            Categoria::create([
+                'nombre' => $data['nombre'],
+                'descripcion' => $data['descripcion'],
+            ]);
+            return back()->with('message', array('title' => '¡Categoria registrada con exito!', 'body'=>'Se ha registrado una nueva categoria'));
+        }
     }
 
     public function show()

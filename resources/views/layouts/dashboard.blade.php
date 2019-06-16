@@ -20,11 +20,10 @@
   </head>
 
   <body class="sidebar-mini">
+    @include('components.alerts')
     <div class="wrapper">
-
       <header class="main-header">
         <!-- Logo -->
-        
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="nav z-depth-1" role="navigation">
           <a href="index2.html" class="logo grey-text">
@@ -112,14 +111,26 @@
       <!--Fin-Contenido-->
 
     </div>
-    <!-- jQuery 2.1.4 -->
-    <script src="{{asset('admin/js/jQuery-2.1.4.min.js')}}"></script>
-    <!-- Bootstrap 3.3.5 -->
-    <script src="{{asset('admin/js/bootstrap.min.js')}}"></script>
-    <!-- AdminLTE App -->
+    <!-- JQuery -->
+    
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
+              
+    <!-- google maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClfElSCm1oarkG1XhX1Ac8vJ9tIFaYeVs"></script>
+    <!-- google maps -->
+    <script type="text/javascript" src="{{asset('js/scripts.js')}}" ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="{{asset('admin/js/app.min.js')}}"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
 	  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
-
+    <script>
+      $('#message').modal('show');
+    </script>
   </body>
 </html>

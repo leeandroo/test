@@ -1,33 +1,6 @@
 @extends('layouts.main')
 @section('titulo', 'Agendar Servicio')
 @section('contenido')
-
-
-	@if ($errors->any())
-		<div id="myModal" class="modal fade right" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  		aria-hidden="true">
-			<div class="modal-dialog modal-side modal-top-right" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h4 class="modal-title">Ups! algo ha salido mal</h4>
-					</div>
-					<div class="modal-body">
-						<p>El formulario posee los siguientes errores:</p>
-						<ul>
-							@foreach($errors->all() as $error)
-								<li>{{$error}}</li>
-							@endforeach
-						</ul>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	@endif
-
-
 	<div id="form-container">
         <div class="container">
             <div class="row ml-0 mr-0 mb-5">

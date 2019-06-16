@@ -87,6 +87,6 @@ class AgendaController extends Controller
     	        'estado_cita'=> "Nueva"
             ]);
         }
-        return redirect('/');
+        return redirect('/')->with('message', array('title' => '¡Solicitud registrada con exito!', 'body'=>'La confirmación de la hora y responsable será enviada a su correo'));return redirect('/');
     }
 }

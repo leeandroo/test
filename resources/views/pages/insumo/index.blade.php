@@ -11,7 +11,7 @@
                         <thead>
                             <tr>
                                 <th class="table-title">Nombre</th>
-                                <!-- <th class="table-title">Categoria</th> -->
+                                <th class="table-title">Categoria</th>
                                 <th class="table-title">Codigo</th>
                                 <th class="table-title">Cantidad</th>
                                 <th class="table-title">Descripción</th>
@@ -22,6 +22,7 @@
                                 @foreach ($insumos as $insumo)
                                     <tr>
                                         <td class="table-text align-baseline">{{ $insumo->nombre }} </td>
+                                        <td class="table-text align-baseline">{{ $insumo->nombre_categoria }} </td>
                                         <td class="table-text align-baseline">{{ $insumo->codigo }} </td>
                                         <td class="table-text align-baseline">{{ $insumo->stock }} </td>
                                         <td class="table-text align-baseline">{{ $insumo->descripcion }} </td>

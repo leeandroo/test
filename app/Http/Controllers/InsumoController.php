@@ -14,14 +14,8 @@ class InsumoController extends Controller
         $insumos = DB::table('insumo')
         ->where('estado', 'Disponible')
         ->join('categoria', 'insumo.idcategoria', '=', 'categoria.idcategoria')
-        ->select('categoria.nombre as nombre_categoria')
+        ->select('insumo.*','categoria.nombre as nombre_categoria')
         ->paginate(4);
-        
-        // $insumos = DB::table('insumo')->where('estado', 'Disponible')->paginate(4);
-        // foreach ($insumos as $insumo) {
-        //     $insumo->categoria = DB::table('categoria')->where('idcategoria', $insumo->idcategoria)->get();
-        // }
-
         return view('pages.insumo.index', compact('insumos'));
     }
 
