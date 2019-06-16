@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 use App\Cliente;
 use App\Cita;
 
@@ -12,13 +13,13 @@ class AgendaController extends Controller
     public function index()
     {
         
-        $citas = DB::table('cita')->where('estado_cita', 'Nueva')->paginate(4);
-        $proxima_cita = DB::table('cita')->orderBy('fecha', 'asc')->first();
-        $proxima_cita->cliente = DB::table('cliente')->where('idcliente', $proxima_cita->idcliente)->first();
-        foreach ($citas as $cita) {
-            $cita->cliente = DB::table('cliente')->where('idcliente', $cita->idcliente)->first();
-        }
-        return view('pages.agenda.index', compact('citas', 'proxima_cita'));
+        $citas = DB::table('cita as ct')
+        ->where('ct.estado_cita', 'Nueva')
+        ->join('cliente as cl', 'ct.idcliente','=','cl.idcliente')
+        ->select('ct.*','cl.*')
+        ->paginate(4);
+        
+        return view('pages.agenda.index', compact('citas'));
     }
 
     public function show()
@@ -31,17 +32,45 @@ class AgendaController extends Controller
         return view("pages.agenda.create");
     }
 
-    public function store(){
+    public function store_old_client(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'rut' => 'required|max:10'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/agendar')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+        $cita = new Cita;
+        $cita->idcliente = $request->get('rut');
+        $cita->servicio = $request->get('servicio');
+        if($request->get('estadowsp'))
+        {
+            $cita->estado_whatsapp = 1;
+        }else{
+            $cita->estado_whatsapp = 0;
+        }
+        $cita->estado_cita = "Nueva";
+        $cita->save();
+        return redirect('/')->with('message', array('title' => '¡Solicitud registrada con exito!', 'body'=>'La confirmación de la hora y responsable será enviada a su correo'));
+    }
+
+    public function store_new_client(Request $request){
         $estadowsp = 0;
-        $data = request()->all();
-        $validator = Validator::make($data, [
+        if($request->get('estadowsp'))
+        {
+            $estadowsp = 1;
+        }
+        $validator = Validator::make($request->all(), [
             'rut' => 'required|max:10',
             'nombre' => 'required',
             'apellido' => 'nullable',
             'telefono' => 'required|max:12',
             'correo' => 'required|max:50',
             'direccion' => 'required|max:50',
-            'fecha' =>'required|date_format:dd/mm/yyyy'
         ]);
 
         if ($validator->fails()) {
@@ -50,43 +79,33 @@ class AgendaController extends Controller
                         ->withInput();
         }
         
-        $cliente = DB::table('cliente')->where('idcliente', $data["rut"])->first();
-        if($cliente){
-            if($data["estadowsp"]){
-                $estadowsp = 1;
-            }
-
+        if(DB::table('cliente')->where('idcliente', $request->get('rut'))->first()){
+            
             $cita = Cita::create([
-                'idcliente' => $data["rut"],
-                'servicio'=> $data["servicio"],
-                'fecha' => $data["fecha"],
-    	        'estado_whatsapp'=> $estadowsp,
+                'idcliente' => $request->get('rut'),
+                'servicio'=> $request->get('servicio'),
+                'estado_whatsapp' => $estadowsp,
     	        'estado_cita'=> "Nueva"
             ]);
         }else{
             
             $cliente = Cliente::create([
-                "idcliente" => $data["rut"],
-                "nombre" => $data["nombre"],
-                "apellido" => $data["apellido"],
-                "telefono" => $data["telefono"],
-                "correo" => $data["correo"],
-                "direccion" => $data["direccion"],
-                "tipo_cliente" => $data["tipo"],
+                "idcliente" => $request->get('rut'),
+                "nombre" => $request->get('nombre'),
+                "apellido" => $request->get('apellido'),
+                "telefono" => $request->get('telefono'),
+                "correo" => $request->get('correo'),
+                "direccion" => $request->get('direccion'),
+                "tipo_cliente" => $request->get('tipo'),
             ]);
 
-            if($data["estadowsp"]){
-                $estadowsp = 1;
-            }
-
             $cita = Cita::create([
-                'idcliente' => $data["rut"],
-                'servicio'=> $data["servicio"],
-                'fecha' => $data["fecha"],
-    	        'estado_whatsapp'=> $estadowsp,
+                'idcliente' => $request->get('rut'),
+                'servicio'=> $request->get('servicio'),
+                'estado_whatsapp' => $estadowsp,
     	        'estado_cita'=> "Nueva"
             ]);
         }
-        return redirect('/')->with('message', array('title' => '¡Solicitud registrada con exito!', 'body'=>'La confirmación de la hora y responsable será enviada a su correo'));return redirect('/');
+        return redirect('/')->with('message', array('title' => '¡Solicitud registrada con exito!', 'body'=>'La confirmación de la hora y responsable será enviada a su correo'));
     }
 }

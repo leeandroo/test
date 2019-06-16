@@ -14,7 +14,8 @@
 Route::get('/', 'InterfazController@get_landing_page');
 Route::get('/agendar', 'AgendaController@create');
 Route::get('/dashboard/agenda', 'AgendaController@index');
-Route::post('/agendar', 'AgendaController@store');
+Route::post('/agendar/antiguo', 'AgendaController@store_old_client');
+Route::post('/agendar/nuevo', 'AgendaController@store_new_client');
 
 // RUTAS INSUMO 
 Route::get('/dashboard/insumo', 'InsumoController@index');

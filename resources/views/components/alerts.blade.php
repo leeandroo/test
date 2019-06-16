@@ -4,7 +4,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header danger-color white-text">
-                    <h4 class="modal-title">Ups! algo ha salido mal</h4>
+                    <h4 class="modal-title"><i class="fas fa-exclamation-circle"></i> Ups! algo ha salido mal</h4>
                 </div>
                 <div class="modal-body">
                     <p>El formulario posee los siguientes errores:</p>
@@ -27,7 +27,7 @@
         <div class="modal-dialog modal-side modal-top-right" role="document">
             <div class="modal-content">
                 <div class="modal-header success-color">
-                    <h4 class="modal-title white-text">{{ session()->get('message.title') }}</h4>
+                    <h4 class="modal-title white-text"><i class="fas fa-check-circle"></i> {{ session()->get('message.title') }}</h4>
                 </div>
                 <div class="modal-body">
                     <p>{{ session()->get('message.body') }}</p>

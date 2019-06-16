@@ -27,17 +27,43 @@
 											<div class="modal-dialog">
 												<div class="modal-content">
 													<div class="modal-header">
-														<h4 class="modal-title">Ups! algo ha salido mal</h4>
+														<h4 class="modal-title black-text">Agende su cita</h4>
 													</div>
 													<div class="modal-body">
-														<p>El formulario posee los siguientes errores:</p>
-														<ul>
-															<li>Ingrese</li>
-														</ul>
+														<p></p>
+														<form class="align-items-center" style="color: #757575;" action="{{ url('/agendar/antiguo') }}" method="POST">
+                                                        	{!! csrf_field() !!}
+															<div class="form-row">
+																<div class="col-lg-12 col-md-12">
+																	<label for="nombre" class="mt-1 box-label">RUT del solicitante</label>
+																	<input name="rut" class="form-control " type="text">
+																</div>
+																<div class="col-lg-12 col-md-12">
+																	<label for="servicio" class="mt-1 box-label">Tipo de servicio</label>
+																	<select class="custom-select" name="servicio">
+																		<option value="Mantención de equipos">Mantención de equipos</option>
+																		<option value="Mantención de vehículos">Mantención de vehículos</option>
+																		<option value="Equipamiento minero">Equipamiento minero</option>
+																		<option value="Instalación de alarmas">Instalación de alarmas</option>
+																		<option value="Instalación de cámaras">Instalación de cámaras</option>
+																		<option value="Cotizaciones">Cotizaciones</option>
+																		<option value="Automatización de vivienda">Automatización de vivienda</option>
+																		<option value="Otro">Otro</option>
+																	</select>
+																</div>
+																<div class="col-lg-12">
+																	<div class="custom-control custom-checkbox mt-3 text-left">
+																		<input type="checkbox" class="custom-control-input" id="estado_wsp" name="estado_wsp">
+																		<label class="custom-control-label grey-text" for="estado_wsp" id="relawayLight">¿Desea que nos comuniquemos a través de Whatsapp?</label>
+																	</div>
+																</div>	
+															</div>
+															<div class="form-row mt-3 mb-2">
+																<button type="submit" class="btn btn-default">Enviar</button>
+															</div>
+														</form>
 													</div>
-													<div class="modal-footer">
-														<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-													</div>
+													
 												</div>
 											</div>
 										</div>
@@ -58,7 +84,7 @@
 											Agenda tu cita ingresando tus datos y el servicio que deseas solcitar
 										</p>
 									</div>
-									<form class="align-items-center" style="color: #757575;" action="{{ url('/agendar') }}" method="POST">
+									<form class="align-items-center" style="color: #757575;" action="{{ url('/agendar/nuevo')  }}" method="POST">
 										{!! csrf_field() !!}
 										<div class="form-group ml-4 mr-4">
 											<div>
@@ -119,7 +145,7 @@
 											</div>
 
 											<div class="form-row">
-												<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12" >
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
 													<label for="servicio" class="mt-1 box-label">Tipo de servicio</label>
 													<select class="custom-select" name="servicio">
 														<option value="Mantención de equipos">Mantención de equipos</option>
@@ -132,19 +158,12 @@
 														<option value="Otro">Otro</option>
 													</select>
 												</div>
-												<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-													<label for="fecha" class="mt-1 box-label">Fecha atención</label>
-													<input name="fecha" class="form-control " type="text" id="datepicker">
-												</div>			
-											</div>
-										</div>
-
-										<div class="form-row ml-4 mr-4">
-											<div class="col">
-												<div class="custom-control custom-checkbox my-4 text-center">
-													<input type="checkbox" class="custom-control-input" id="estadowsp" name="estadowsp">
-													<label class="custom-control-label grey-text w-responsive" for="estadowsp" id="relawayLight">¿Desea que nos comuniquemos a través de Whatsapp?</label>
-												</div>
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+													<div class="custom-control custom-checkbox my-4 text-center">
+														<input type="checkbox" class="custom-control-input" id="estadowsp" name="estadowsp">
+														<label class="custom-control-label grey-text w-responsive" for="estadowsp" id="relawayLight">¿Desea que nos comuniquemos a través de Whatsapp?</label>
+													</div>
+												</div>		
 											</div>
 										</div>
 										<div class="md-form my-0 text-center" id="btnformulario">

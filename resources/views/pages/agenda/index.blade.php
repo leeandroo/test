@@ -12,7 +12,6 @@
                             <tr>
                                 <th class="table-title">Solicitante</th>
                                 <th class="table-title">Servicio</th>
-                                <th class="table-title">Fecha</th>
                                 <th class="table-title">Opciones</th>
                             </tr>
                         </thead>
@@ -20,13 +19,12 @@
                             @foreach ($citas as $cita)
                                 <tr>
                                     <td class="table-text align-baseline">
-                                        {{ $cita->cliente->nombre }} 
-                                        @if($cita->cliente->apellido != 'No aplica')
-                                            {{$cita->cliente->apellido}}
+                                        {{ $cita->nombre }} 
+                                        @if($cita->apellido != 'No aplica')
+                                            {{$cita->apellido}}
                                         @endif
                                     </td>
                                     <td class="table-text align-baseline">{{ $cita->servicio }}</td>
-                                    <td class="table-text align-baseline">{{ $cita->fecha }}</td>
                                     <td class="align-baseline">
                                         <button class="btn cyan white-text" id="btn-aceptar">Confirmar</button>
                                     </td>
@@ -104,16 +102,16 @@
                             <div class="container text-center">
                                 <i class=" fas fa-calendar-alt grey-text icon-xl mb-3 mt-3"></i>
                                 <p>
-                                    {{ $proxima_cita->fecha }}
+                                    
                                 </p>
                             </div>
                         </div>
                         <div class="col-md-8">
                             <h1 class="sub-title">Servicio</h1>
-                            <p>{{ $proxima_cita->servicio }}</p>    
+                            <p></p>    
                             <h1 class="sub-title">Lugar</h1>
                             <p>
-                                {{ $proxima_cita->cliente->direccion}}
+                               
                             </p>
                         </div>
                     </div>
