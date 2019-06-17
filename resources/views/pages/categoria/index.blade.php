@@ -57,9 +57,6 @@
         <div>
 
             @include('pages.categoria.create')
-
-            @include('pages.categoria.edit')
-
         </div>
 
     </div>

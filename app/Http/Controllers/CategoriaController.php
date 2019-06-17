@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rule;
 use App\Categoria;
 
 class CategoriaController extends Controller
@@ -62,8 +63,29 @@ class CategoriaController extends Controller
         return view('pages.categoria.edit',['categoria'=> $categoria]);
     }
 
-    public function update($idCategoria)
+    public function update(Categoria $categoria)
     {
+
+        $data = request()->all();
+        $validator = Validator::make($data, [
+            
+
+            
+            'nombre' => ['required', 'max:20', Rule::unique('categoria')->ignore($categoria->id, 'idcategoria')],
+
+            'descripcion' => 'nullable|max:140'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/dashboard/categoria')
+                        ->withErrors($validator)
+                        ->withInput();
+        }else{
+            
+            $categoria->update($data);
+            
+            return back()->with('message', array('title' => '¡Genial!', 'body'=>'Has actualizado correctamente'));
+        }
 
     }
     
