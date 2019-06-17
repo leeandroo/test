@@ -8,17 +8,15 @@ class Cita extends Model
 {
     protected $table = "cita";
     protected $primaryKey = "idcita";
-    protected $foreignKey = "idcliente";
+    protected $foreignKey = "iduser";
     public $timestamps = false;
-    public $cliente;
 
     protected $fillable =[
-    	'idcliente',
+    	'iduser',
         'servicio',
-        'fecha',
-        'hora_atencion',
     	'estado_whatsapp',
-    	'estado_cita'
+        'estado_cita',
+        'descripcion'
     ];
 
     protected $guarded =[

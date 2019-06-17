@@ -13,10 +13,13 @@
 
 Route::get('/', 'InterfazController@get_landing_page');
 Route::get('/login', 'InterfazController@get_login_page');
-Route::get('/agendar', 'AgendaController@create');
+Route::get('/register', 'InterfazController@get_register_page');
+Route::get('/profile', 'InterfazController@get_profile_page');
+Route::post('register', 'Auth\RegisterController@register')->name('register');
+Route::post('login', 'Auth\LoginController@login')->name('login');
 Route::get('/dashboard/agenda', 'AgendaController@index');
-Route::post('/agendar/antiguo', 'AgendaController@store_old_client');
-Route::post('/agendar/nuevo', 'AgendaController@store_new_client');
+Route::post('/solicitar', 'AgendaController@store');
+
 
 // RUTAS INSUMO 
 Route::get('/dashboard/insumo', 'InsumoController@index');

@@ -11,7 +11,8 @@
                                 <div class="col-lg-7" id="centrar">
                                     <div class="container-fluid">
                                         <div class="card-body ml-3 mr-0">
-                                            <form class="align-items-center" style="color: #757575;">
+                                            <form class="align-items-center" style="color: #757575;" action="{{ route('login') }}" method="post">
+                                                {!! csrf_field() !!}
                                                 <div class="form-row mb-3 mt-3 text-center">
                                                     <div class="col-lg-12">
                                                         <h2 class="font-weight-bold black-text"><i class="fas fa-bolt animated tada infinite "></i> BIENVENIDO</h2>	
@@ -21,26 +22,18 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-row mt-3 mb-4">
-                                                    <div class="col-lg-12 mb-2" >
-                                                        <label for="tipo_usuario">Tipo de usuario</label>
-                                                        <select class="custom-select" name="tipo_usuario">
-                                                            <option value="Cliente">Cliente</option>
-                                                            <option value="Trabajador">Trabajador</option>
-                                                            <option value="Administrador">Administrador</option>
-                                                        </select>
-                                                    </div>
                                                     <div class="col-lg-12" >
                                                         <label for="email">Ingresa tu correo</label>
                                                         <input name="email" class="form-control validate" type="email">
                                                     </div>
                                                     <div class="col-lg-12 mt-2" >
-                                                        <label for="password">Ingresa tu password</label>
+                                                        <label for="password">Ingresa tu contraseña</label>
                                                         <input name="password" class="form-control validate" type="password">
                                                     </div>
                                                 </div>		
                                                 <!-- Sign up button -->
                                                 <div class="md-form my-0 text-center" id="btnLogin">
-                                                    <button type="button" class="btn">Iniciar sesión</button>
+                                                    <button type="submit" class="btn">Iniciar sesión</button>
                                                 </div>
 											</form>
                                         </div>
@@ -57,7 +50,7 @@
                                             <li><i class="fas fa-check white-text"></i> Controlar cada servicio que te hemos prestado</li>
                                             <!-- Sign up button -->
                                             <div class="md-form" id="btnRegistrar">
-                                                <a  class="btn" href="{{url('/')}}">Volver al inicio</a>
+                                                <a  class="btn" href="{{url('/register')}}">Registrarse</a>
                                             </div>														
                                         </div>
                                     </div>

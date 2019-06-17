@@ -15,34 +15,42 @@
 				<!-- Collapsible content -->
 				<div class="collapse navbar-collapse" id="basicExampleNav">
 				<!-- Links -->
-				<ul class="navbar-nav mr-auto smooth-scroll">
-					<!-- <li class="nav-item active">
-						<a class="nav-link" href="#" id="relawayBLK">INICIO
-						<span class="sr-only">(current)</span>
-						</a>
-					</li> -->
-					<li class="nav-item">
-						<a class="nav-link" href="#caracteristicas">NOSOTROS</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#diferencias">QUÉ NOS DIFERENCIA</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#servicios">SERVICIOS</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#costos">PLANES Y COSTOS</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#agenda">AGENDA TU SERVICIO</a>
-					</li>
-				</ul>
-				<!-- Links -->
-				<form class="form-inline" action="{{ url('/login') }}" method="get">
-					<div class="md-form my-0">
-						<button type="submit" class="btn" id="btn-sign-in">Iniciar sesión</button>
-					</div>
-				</form>
+					<ul class="navbar-nav mr-auto smooth-scroll">
+						<!-- <li class="nav-item active">
+							<a class="nav-link" href="#" id="relawayBLK">INICIO
+							<span class="sr-only">(current)</span>
+							</a>
+						</li> -->
+						<li class="nav-item">
+							<a class="nav-link" href="#caracteristicas">NOSOTROS</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#diferencias">QUÉ NOS DIFERENCIA</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#servicios">SERVICIOS</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#costos">PLANES Y COSTOS</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#agenda">AGENDA TU SERVICIO</a>
+						</li>
+					</ul>
+					<!-- Links -->
+					@if(Auth::user())
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link" href="{{ url('/profile') }}">BIENVENIDO, <span class="text-uppercase">{{ Auth::user()->name }}</span></a>
+							</li>
+						</ul>
+					@else
+						<form class="form-inline" action="{{ url('/login') }}" method="get">
+							<div class="md-form my-0">
+								<button type="submit" class="btn" id="btn-sign-in">Iniciar sesión</button>
+							</div>
+						</form>
+					@endif
 				</div>
 			<!-- Collapsible content -->	
 			</div>
@@ -143,55 +151,6 @@
 
 	<!-- BODY START -->
 	<main class="mt-5">
-		<section id="acceso" class="container text-center">
-			<div class="row align-items-cente">
-				<div class="col-lg-12 col-md-12 mb-lg-0 mb-4">
-					<h2 class="title ">Acceso a plataforma</h2>
-					<div>
-						<hr class="ra d-inline-block">
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-					<div class="card card-cascade narrower my-4">
-						<div class="card-body">		
-							<div class="text-center">
-								<a href="{{ url('/saludo/login') }}">
-									<i class="fas fa-user fa-4x cyan-text my-3"></i>
-									<p class="cyan-text">Intranet clientes</p>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-					<div class="card card-cascade narrower my-4">
-						<div class="card-body">
-							<div class="text-center">
-								<a href="{{ url('/saludo/login') }}">
-									<i class="fas fa-user-tie fa-4x cyan-text my-3"></i>
-									<p class="cyan-text">Intranet administrador</p>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-					<div class="card card-cascade narrower my-4">
-						<div class="card-body">
-							<div class="text-center">
-								<a href="{{ url('/saludo/login') }}">
-									<i class="fas fa-users-cog fa-4x cyan-text my-3"></i>
-									<p class="cyan-text">Intranet trabajadores</p>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>	
-			</div>
-		</section>
-		<hr class="my-5">
 		<div class="container align-items-center">
 			<!--SECTION NOSOTROS START-->
 			<section id="caracteristicas" class="container text-left">
