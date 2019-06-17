@@ -38,9 +38,9 @@
 					</li>
 				</ul>
 				<!-- Links -->
-				<form class="form-inline">
+				<form class="form-inline" action="{{ url('/login') }}" method="get">
 					<div class="md-form my-0">
-						<button type="button" class="btn" id="btn-sign-in">Iniciar sesión</button>
+						<button type="submit" class="btn" id="btn-sign-in">Iniciar sesión</button>
 					</div>
 				</form>
 				</div>
@@ -68,7 +68,7 @@
 										<!--raya-->
 										<!--descripcion-->
 										<p class="white-text">Registra tu cuenta de usuario y podras acceder a información relevante sobre nosotros.</p>
-										<button type="button" class="btn" id="btn-sign-up">Registrarse</button>
+										
 									</div>
 								</form>			
 							</div>
@@ -143,6 +143,55 @@
 
 	<!-- BODY START -->
 	<main class="mt-5">
+		<section id="acceso" class="container text-center">
+			<div class="row align-items-cente">
+				<div class="col-lg-12 col-md-12 mb-lg-0 mb-4">
+					<h2 class="title ">Acceso a plataforma</h2>
+					<div>
+						<hr class="ra d-inline-block">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+					<div class="card card-cascade narrower my-4">
+						<div class="card-body">		
+							<div class="text-center">
+								<a href="{{ url('/saludo/login') }}">
+									<i class="fas fa-user fa-4x cyan-text my-3"></i>
+									<p class="cyan-text">Intranet clientes</p>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+					<div class="card card-cascade narrower my-4">
+						<div class="card-body">
+							<div class="text-center">
+								<a href="{{ url('/saludo/login') }}">
+									<i class="fas fa-user-tie fa-4x cyan-text my-3"></i>
+									<p class="cyan-text">Intranet administrador</p>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+					<div class="card card-cascade narrower my-4">
+						<div class="card-body">
+							<div class="text-center">
+								<a href="{{ url('/saludo/login') }}">
+									<i class="fas fa-users-cog fa-4x cyan-text my-3"></i>
+									<p class="cyan-text">Intranet trabajadores</p>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</section>
+		<hr class="my-5">
 		<div class="container align-items-center">
 			<!--SECTION NOSOTROS START-->
 			<section id="caracteristicas" class="container text-left">
@@ -378,7 +427,7 @@
 								<li class="grey-text text-left"><i class="fas fa-check cyan-text"></i> Te notificaremos la confirmación de la cita</li>
 								<li class="grey-text text-left"><i class="fas fa-check cyan-text"></i> Se enviará la hora, el responsable y los costos de la cita</li>
 								<p class="text-left mt-2">
-									<a href="{{ url('/agendar' )}}"class="btn cyan white-text" id="relawaySB">Comenzar solicitud <i class="fas fa-angle-right"></i></a>
+									<a href=""class="btn cyan white-text" id="relawaySB">Comenzar solicitud <i class="fas fa-angle-right"></i></a>
 								</p>
 							</div>
 						</div>

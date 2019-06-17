@@ -13,11 +13,11 @@ class InterfazController extends Controller
 
     public function get_login_page()
     {
-        return view('pages.login');
+        return view('auth.login');
     }
 
     public function get_register_page()
     {
-        return view('pages.register');
+        return view('auth.register');
     }
 }

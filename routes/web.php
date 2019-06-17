@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'InterfazController@get_landing_page');
+Route::get('/login', 'InterfazController@get_login_page');
 Route::get('/agendar', 'AgendaController@create');
 Route::get('/dashboard/agenda', 'AgendaController@index');
 Route::post('/agendar/antiguo', 'AgendaController@store_old_client');
