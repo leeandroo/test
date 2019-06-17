@@ -33,4 +33,4 @@ Route::post('/categoria/insertar', 'CategoriaController@store');
 Route::get('/dashboard/empleado', 'EmpleadoController@index');
 Route::get('/pages/empleado', 'EmpleadoController@index');
 Route::post('/empleado/insertar', 'EmpleadoController@store');
-
+Route::get('/dashboard/empleado/{id}/index/edit','EmpleadoController@edit');
