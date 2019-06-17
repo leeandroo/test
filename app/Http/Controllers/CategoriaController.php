@@ -26,11 +26,14 @@ class CategoriaController extends Controller
         return view('pages.categoria.create');
     }
 
+
+
+
     public function store ()
     {
         $data = request()->all();
         $validator = Validator::make($data, [
-            'nombre' => 'required|max:20',
+            'nombre' => 'required|max:20|unique:categoria,nombre',
             'descripcion' => 'nullable|max:140'
         ]);
 
@@ -53,6 +56,16 @@ class CategoriaController extends Controller
         return view('pages.categoria.create');
     }
 
+    
+    public function edit(Categoria $categoria)
+    {
+        return view('pages.categoria.edit',['categoria'=> $categoria]);
+    }
+
+    public function update($idCategoria)
+    {
+
+    }
     
 
     

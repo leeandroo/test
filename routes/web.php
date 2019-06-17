@@ -23,7 +23,11 @@ Route::get('/dashboard/insumo', 'InsumoController@index');
 // RUTAS CATEGORIA 
 Route::get('/dashboard/categoria', 'CategoriaController@index');
 Route::get('/pages/categoria', 'CategoriaController@index');
+
+Route::resource('/pages/categoria/prueba', 'CategoriaController'); 
+Route::get('/categoria/{categoria}/editar', 'CategoriaController@edit');
 Route::post('/categoria/insertar', 'CategoriaController@store');
+
 
 // RUTAS EMPLEADO
 Route::get('/dashboard/empleado', 'EmpleadoController@index');
