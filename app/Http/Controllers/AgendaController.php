@@ -43,18 +43,6 @@ class AgendaController extends Controller
                         ->withErrors($validator)
                         ->withInput();
         }
-
-        $cita = new Cita;
-        $cita->idcliente = $request->get('rut');
-        $cita->servicio = $request->get('servicio');
-        if($request->get('estadowsp'))
-        {
-            $cita->estado_whatsapp = 1;
-        }else{
-            $cita->estado_whatsapp = 0;
-        }
-        $cita->estado_cita = "Nueva";
-        $cita->save();
         return redirect('/')->with('message', array('title' => '¡Solicitud registrada con exito!', 'body'=>'La confirmación de la hora y responsable será enviada a su correo'));
     }
 

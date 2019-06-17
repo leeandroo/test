@@ -21,7 +21,7 @@
 											</p>
 										</div>
 										<div class="row mb-5">
-											<button type="button" class="btn" id="btn-agendar" data-target="#modalCita" data-toggle="modal">Agendar cita</button>
+											<button type="button" class="btn" id="btn-agendar" data-target="#modalCita" data-toggle="modal">Inciar sesión</button>
 										</div>
 										{{-- Inicio ventana modal --}}
 										<div id="modalCita" class="modal fade" role="dialog">
@@ -32,12 +32,12 @@
 													</div>
 													<div class="modal-body">
 														<p></p>
-														<form class="align-items-center" style="color: #757575;" action="{{ url('/agendar/antiguo') }}" method="POST">
+														<form class="align-items-center" style="color: #757575;" action="{{ url('/agendar/antiguo') }}" method="POST" class="needs-validation">
                                                         	{!! csrf_field() !!}
 															<div class="form-row">
 																<div class="col-lg-12 col-md-12">
 																	<label for="nombre" class="mt-1 box-label">RUT del solicitante</label>
-																	<input name="rut" class="form-control " type="text">
+																	<input name="rut" class="form-control " type="text" required>
 																</div>
 																<div class="col-lg-12 col-md-12">
 																	<label for="servicio" class="mt-1 box-label">Tipo de servicio</label>
@@ -54,7 +54,7 @@
 																</div>
 																<div class="col-lg-12">
 																	<div class="custom-control custom-checkbox mt-3 text-left">
-																		<input type="checkbox" class="custom-control-input" id="estado_wsp" name="estado_wsp">
+																		<input type="checkbox" class="custom-control-input" id="estado_wsp" name="estado_wsp" required>
 																		<label class="custom-control-label grey-text" for="estado_wsp" id="relawayLight">¿Desea que nos comuniquemos a través de Whatsapp?</label>
 																	</div>
 																</div>	
