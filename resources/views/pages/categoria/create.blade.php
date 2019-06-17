@@ -21,6 +21,7 @@
                 </div>
                 <div class="md-form my-0 text-center" id="btnformulario">
                     <button type="submit" class="btn green white-text" id="btn-aceptar">Ingresar <i class="fa fa-paper-plane ml-2"></i></button>
+                    <button type="reset" class="btn red white-text" id="btn-cancelar">Cancelar <i class="fas fa-times ml-2"></i></button>
                 </div>
             </form>
         </div>
