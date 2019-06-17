@@ -8,7 +8,7 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row" style="padding-bottom: 2em;">
     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
         <div class="card mt-4 ml-2 mr-2">
             <div class="card-body">
@@ -17,6 +17,7 @@
                     <table class="table table-borderless table-responsive-sm ">
                         <thead>
                             <tr>
+                                <th class="table-title">ID</th>
                                 <th class="table-title">Nombre</th>
                                 <!-- <th class="table-title">Categoria</th> -->
                                 <th class="table-title">Descripción</th>
@@ -26,12 +27,14 @@
                         <tbody >
                                 @foreach ($categorias as $categoria)
                                     <tr>
+                                        <th class="table-text align-baseline">{{ $categoria->idcategoria }} </th>
                                         <td class="table-text align-baseline">{{ $categoria->nombre }} </td>
                                         <td class="table-text align-baseline">{{ $categoria->descripcion }} </td>
 
                                         <td class="align-baseline">
-                                            <button class="btn cyan white-text" id="btn-aceptar">Editar</button>
-                                            <button class="btn red white-text" id="btn-aceptar">Eliminar</button>
+                                                
+                                                <a href="{{ URL::action('CategoriaController@edit', $categoria->idcategoria ) }}" class="btn cyan white-text" id="btn-aceptar">Editar</a> 
+                                                <a href="" class="btn red white-text" id="btn-aceptar">Eliminar</a>                                                                                                               
                                         </td>
                                     </tr>
                                 @endforeach
@@ -50,31 +53,15 @@
     </div>
 
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        <div class="card mt-4 ml-2 mr-2">
-            <div class="card-body">
-                <div class="container-fluid">
-                    <h1 class="sub-title my-4">Ingresa una Nueva Categoria</h1>
-                    <form method="POST" action="{{ url('categoria/insertar') }}">
-                        {!! csrf_field() !!}
-                        <div class="form-group">
-                            <div class="form-row">
-                                <div class="col-lg-12 col-12">
-                                    <label for="nombre" class="mt-1 box-label">Nombre</label>
-                                    <input name="nombre" class="form-control" type="text">
-                                </div>
-                                <div class="col-lg-12 col-12">
-                                    <label for="nombre" class="mt-1 box-label">Descripción</label>
-                                    <textarea name="descripcion" class="form-control" id="exampleFormControlTextarea1" rows="4,5"></textarea>
-                                </div>                                
-                            </div>
-                        </div>
-                        <div class="md-form my-0 text-center" id="btnformulario">
-                            <button type="submit" class="btn green white-text" id="btn-aceptar">Ingresar <i class="fa fa-paper-plane ml-2"></i></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+
+        <div>
+
+            @include('pages.categoria.create')
+
+            @include('pages.categoria.edit')
+
         </div>
+
     </div>
 
 </div>

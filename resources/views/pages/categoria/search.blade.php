@@ -1,6 +1,5 @@
 
-
-<form action="{{ url('pages/categoria') }}" autocomplete="off" method="GET" role="search">
+<form action="{{ url('pages/categoria') }}" autocomplete="off" method="PATCH" role="search">
 
 <div class="form-group mt-4 ml-2">
     <div class="input-group">

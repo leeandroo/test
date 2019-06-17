@@ -23,6 +23,7 @@
 										<div class="row mb-5">
 											<button type="button" class="btn" id="btn-agendar" data-target="#modalCita" data-toggle="modal">Inciar sesión</button>
 										</div>
+										{{-- Inicio ventana modal --}}
 										<div id="modalCita" class="modal fade" role="dialog">
 											<div class="modal-dialog">
 												<div class="modal-content">

@@ -23,10 +23,12 @@ Route::get('/dashboard/insumo', 'InsumoController@index');
 // RUTAS CATEGORIA 
 Route::get('/dashboard/categoria', 'CategoriaController@index');
 Route::get('/pages/categoria', 'CategoriaController@index');
+Route::get('/categoria/{categoria}/editar', 'CategoriaController@edit');
 Route::post('/categoria/insertar', 'CategoriaController@store');
+
 
 // RUTAS EMPLEADO
 Route::get('/dashboard/empleado', 'EmpleadoController@index');
 Route::get('/pages/empleado', 'EmpleadoController@index');
 Route::post('/empleado/insertar', 'EmpleadoController@store');
-
+Route::get('/dashboard/empleado/{id}/index/edit','EmpleadoController@edit');
