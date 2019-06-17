@@ -52,5 +52,10 @@ class EmpleadoController extends Controller
             return back()->with('message', array('title' => '¡Empleado registrado con éxito!', 'body'=>'Se ha registrado un nuevo empleado'));
         }
     }
-    
+    public function edit($id)
+    {
+        return view("pages.empleado.edit",["empleado"=>Empleado::findOrFail($id)]);
+    }
+  
 }
+  
