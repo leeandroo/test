@@ -34,9 +34,10 @@
                                         <td class="align-baseline">
                                                 
                                                 <a href="{{ URL::action('CategoriaController@edit', $categoria->idcategoria ) }}" class="btn cyan white-text" id="btn-aceptar">Editar</a> 
-                                                <a href="" class="btn red white-text" id="btn-aceptar">Eliminar</a>                                                                                                               
+                                                <a href="" data-target="#modal-delete-{{$categoria->idcategoria}}" data-toggle="modal" class="btn red white-text" id="btn-aceptar">Eliminar</a>                                                                                                               
                                         </td>
                                     </tr>
+                                @include('pages.categoria.modal')
                                 @endforeach
 
                         </tbody>

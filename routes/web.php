@@ -26,15 +26,11 @@ Route::get('/dashboard/insumo', 'InsumoController@index');
 
 // RUTAS CATEGORIA 
 Route::get('/dashboard/categoria', 'CategoriaController@index');
-
 Route::get('/pages/categoria', 'CategoriaController@index');
-
 Route::post('/categoria/insertar', 'CategoriaController@store');
-
 Route::get('/categoria/{categoria}/editar', 'CategoriaController@edit');
-
-
 Route::put('/categoria/{categoria}', 'CategoriaController@update');
+Route::delete('/categoria/{categoria}', 'CategoriaController@destroy');
 
 
 

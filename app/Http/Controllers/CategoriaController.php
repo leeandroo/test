@@ -69,24 +69,27 @@ class CategoriaController extends Controller
         $data = request()->all();
         $validator = Validator::make($data, [
             
-
-            
-            'nombre' => ['required', 'max:20', Rule::unique('categoria')->ignore($categoria->id, 'idcategoria')],
-
+            'nombre' => ['required', 'max:20', Rule::unique('categoria')->ignore($categoria->idcategoria, 'idcategoria')],
             'descripcion' => 'nullable|max:140'
         ]);
 
         if ($validator->fails()) {
-            return redirect('/dashboard/categoria')
-                        ->withErrors($validator)
-                        ->withInput();
+            return back()->withErrors($validator)->withInput();
         }else{
             
             $categoria->update($data);
-            
-            return back()->with('message', array('title' => '¡Genial!', 'body'=>'Has actualizado correctamente'));
+            return redirect('/dashboard/categoria')
+            ->with('message', array('title' => '¡Genial!', 'body'=>'Has actualizado correctamente'));
         }
 
+    }
+
+    public function destroy(Categoria $categoria){
+
+        $categoria->delete();
+
+        return redirect('/dashboard/categoria')
+            ->with('message', array('title' => 'Todo salio bien!', 'body'=>'Has Eliminado la categoria correctamente'));
     }
     
 

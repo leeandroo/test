@@ -32,7 +32,7 @@
                 <div class="modal-body">
                     <p>{{ session()->get('message.body') }}</p>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer">            
                     <button type="button" class="btn success-color white-text" data-dismiss="modal">Aceptar</button>
                 </div>
             </div>
