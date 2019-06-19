@@ -1,6 +1,31 @@
 @extends('layouts.dashboard')
 @section('titulo', 'Gestión de Bodega')
 @section('contenido')
+
+<style>
+
+#centrar{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+</style>
+
+<div class="row container-fluid" id="">
+    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12" id="centrar">
+        <h3 class="text-bold aling-middle">Ingresa un insumo</h3>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 float-left" id="centrar">   
+    <button class="btn cyan white-text" id="btn-aceptar">Editar</button> 
+    </div>
+
+
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 float-right">
+        @include('pages.insumo.searchInsumo')
+    </div>
+</div>
+
 <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card mt-4 ml-2 mr-2">

@@ -8,6 +8,21 @@ use App\Insumo;
 
 class InsumoController extends Controller
 {
+
+    // public function index(Request $request)
+    // {
+
+    //     if($request){
+
+    //         $query=trim($request->get('searchText'));
+    //         $categorias = DB::table('categoria')->where('nombre','LIKE','%'.$query.'%')->orderBy('idcategoria', 'DESC')->paginate(4);
+            
+    //         return view('pages.categoria.index', ["categorias"=>$categorias, "searchtext"=>$query]);
+    //     }
+        
+    // }
+
+
     public function index()
     {
         

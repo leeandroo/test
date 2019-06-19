@@ -97,16 +97,26 @@
 
       <!--Contenido-->
       <div class="main">
+
         <div class="content-wrapper grey lighten-3">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-12">
-              <h1 class="content-title mt-5 ml-3">@yield('titulo')</h1>
+
+          <div class="container-fluid">
+
+            <div class="row">
+
+              <div class="col-lg-12">
+
+                <h1 class="content-title mt-5 ml-3">@yield('titulo')</h1>
+
+              </div>
+
             </div>
+
+            @yield('contenido')
           </div>
-          @yield('contenido')
-        </div>
-      </div>  
+
+        </div>  
+
       </div>
       <!--Fin-Contenido-->
 
