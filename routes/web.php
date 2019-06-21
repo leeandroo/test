@@ -25,11 +25,16 @@ Route::post('/solicitar', 'AgendaController@store');
 // RUTAS INSUMO 
 Route::get('/dashboard/insumo', 'InsumoController@index');
 Route::get('/pages/insumo', 'InsumoController@index');
+Route::get('/insumo/create', 'InsumoController@create');
+Route::post('/insumo/insertar', 'InsumoController@store');
+
+Route::get('/insumo/{insumo}/editar', 'InsumoController@edit');
+Route::put('/insumo/{insumo}', 'InsumoController@update');
+Route::delete('/insumo/{insumo}', 'InsumoController@destroy');
 
 // RUTAS CATEGORIA 
 Route::get('/dashboard/categoria', 'CategoriaController@index');
 Route::get('/pages/categoria', 'CategoriaController@index');
-
 Route::post('/categoria/insertar', 'CategoriaController@store');
 Route::get('/categoria/{categoria}/editar', 'CategoriaController@edit');
 Route::put('/categoria/{categoria}', 'CategoriaController@update');
