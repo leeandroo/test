@@ -9,18 +9,35 @@ class Insumo extends Model
     protected $table = "insumo";
     protected $primaryKey = "idinsumo";    
     public $timestamps = false;
-    public $categoria;
+    
 
     protected $fillable =[
+        'idinsumo',
         'idcategoria',
         'codigo',
         'nombre',
-    	'stock',
+        'stock',
+        'descripcion',
     	'estado'
     ];
 
     protected $guarded =[
 
     ];
+
+    //scope
+
+    public function scopeCategoria($query, $categoria){
+        
+        if($categoria){
+            return $query->where('idcategoria', 'LIKE', "%$categoria%");
+        }
+    }
+    public function scopeNombre($query, $nombre){
+        
+        if($nombre){
+            return $query->where('nombre', 'LIKE', "%$nombre%");
+        }
+    }
 
 }
