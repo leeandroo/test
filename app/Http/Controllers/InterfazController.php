@@ -28,11 +28,11 @@ class InterfazController extends Controller
         $citas_agendadas = DB::table('cita')
         ->where('estado_cita', '=', 'Agendada')
         ->where('iduser', Auth::user()->iduser)
-        ->paginate(4);
+        ->paginate(3);
         $citas_nuevas = DB::table('cita')
         ->where('estado_cita', '=', 'Nueva')
         ->where('iduser', Auth::user()->iduser)
-        ->paginate(4);
+        ->paginate(3);
         return view('pages.profile', compact('citas_agendadas', 'citas_nuevas'));
     }
 }

@@ -51,7 +51,7 @@
                                                         <div class="col-lg-12 col-sm-12 my-2" >
                                                             <!-- <label for="correo" class="mt-1 box-label">Tipo de cliente</label> -->
                                                             <select class="custom-select" name="tipo_cliente">
-                                                                <option value="Ninguno">--Ninguno--</option>
+                                                                <option value="" disabled selected>Tipo de cliente</option>
                                                                 <option value="Empresa">Empresa</option>
                                                                 <option value="Persona natural">Persona natural</option>
                                                             </select>

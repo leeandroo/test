@@ -17,6 +17,7 @@ Route::get('/register', 'InterfazController@get_register_page');
 Route::get('/profile', 'InterfazController@get_profile_page');
 Route::post('register', 'Auth\RegisterController@register')->name('register');
 Route::post('login', 'Auth\LoginController@login')->name('login');
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/dashboard/agenda', 'AgendaController@index');
 Route::post('/solicitar', 'AgendaController@store');
 
